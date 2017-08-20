@@ -1,0 +1,48 @@
+---
+- hosts: all
+  become: yes
+  roles:
+  - mintmate-config
+  vars:
+    syncdirs:
+    - /home/hpierce/bin
+    - /home/hpierce/KEEP
+    - /home/hpierce/linux
+    - /home/hpierce/PROJECTS
+    - /home/hpierce/UNSORTED
+    - /home/hpierce/WEB
+    home_dir: /home/hpierce
+    user_name: hpierce
+    install_packages:
+    - 'ansible'
+    - 'audacity'
+    - 'brasero'
+    - 'cclive'
+    - 'dconf-tools'
+    - 'dos2unix'
+    - 'evince'
+    - 'fbreader'
+    - 'fslint'
+    - 'gaupol'
+    - 'gcap'
+    - 'geeqie'
+    - 'icedtea-8-plugin'
+    - 'icedtea-plugin'
+    - 'imagination'
+    - 'lame'
+    - 'lxc'
+    - 'lxd'
+    - 'mplayer2'
+    - 'mp3diags'
+    - 'mutt'
+    - 'openjdk-8-jdk'
+    - 'picard'
+    - 'puddletag'
+    - 'ripperx'
+    - 'screen'
+    - 'software-properties-common'
+    - 'tesseract-ocr'
+    - 'vim'
+    - 'xsane'
+    - 'youtube-dl'
+

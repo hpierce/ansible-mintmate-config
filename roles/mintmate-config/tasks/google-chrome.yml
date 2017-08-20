@@ -1,0 +1,19 @@
+---
+# Chrome repository
+- name: Chrome repo
+  copy: 
+    src: files/google-chrome.list 
+    dest: /etc/apt/sources.list.d/google-chrome.list 
+
+# GPG Key
+- name: Google signing key
+  apt_key: url=https://dl-ssl.google.com/linux/linux_signing_key.pub state=present
+
+# Install package
+- name: Install virtualbox
+  apt:
+    name: google-chrome-stable
+    state: latest
+    update_cache: yes
+
+

@@ -1,0 +1,38 @@
+---
+# Remove packages
+- name: Remove packages
+  apt:
+    name: "{{ item }}"
+    state: absent
+  with_items:
+    - 'activemq'
+    - 'avahi-autoipd'
+    - 'avahi-daemon'
+    - 'avahi-utils'
+    - 'blueberry'
+    - 'bluetooth'
+    - 'bluez'
+    - 'bluez-cups'
+    - 'bluez-obexd'
+    - 'bluez-tools'
+    - 'brltty'
+    - 'calibre'
+    - 'calibre-bin'
+    - 'hexchat'
+    - 'hexchat-common'
+    - 'libgnome-bluetooth13'
+    - 'modemmanager'
+    - 'onboard'
+    - 'pix'
+    - 'pix-data'
+    - 'rhythmbox'
+    - 'rhythmbox-data'
+    - 'rhythmbox-plugins'
+    - 'rhythmbox-plugin-tray-icon'
+    - 'tomboy'
+    - 'xed'
+    - 'xed-common'
+    - 'velocity'
+    - 'virtualbox-dkms'
+    - 'virtualbox-qt'
+

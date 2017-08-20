@@ -1,0 +1,10 @@
+---
+# Sync directories
+- name: Sync linux
+  synchronize: 
+    src: "{{ item }}"
+    dest: "{{ home_dir }}"
+    delete: yes
+    recursive: yes
+  with_items: "{{ syncdirs }}"
+

@@ -1,0 +1,13 @@
+---
+# Gsettings
+- name: Gsettings script
+  copy: 
+    src: files/gsettings.sh
+    dest: /tmp/gsettings.sh
+
+# Fix settings
+- name: Execute the script
+  command: sh /tmp/gsettings.sh
+  become: yes
+  become_user: "{{ user_name }}"
+

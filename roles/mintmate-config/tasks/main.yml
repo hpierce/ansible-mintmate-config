@@ -1,0 +1,59 @@
+---
+# Tasks
+
+# Auto-clean packages
+- name: Remove useless packages from the cache
+  apt:
+    autoclean: yes
+
+# Update packages list
+- name: apt-get update
+  command: apt-get update
+
+# Remove packages
+- name: Remove packages
+  include: removal.yml
+
+# Auto-remove packages
+- name: Remove dependencies that are no longer required
+  apt:
+    autoremove: yes
+
+# Install packages
+- name: Install packages 
+  apt:
+    name: "{{ item }}"
+    state: present
+    install_recommends: yes
+  with_items: "{{ install_packages }}"
+  ignore_errors: yes
+
+# Upgrade packages
+- name: Upgrade packages
+  apt:
+    upgrade: dist
+
+# Virtualbox
+- name: Virtualbox 
+  include: virtualbox.yml
+
+# Google Chrome
+- name: Google Chrome
+  include: google-chrome.yml
+
+# Docker
+- name: Docker
+  include: docker.yml
+
+# Vagrant
+- name: Vagrant
+  include: vagrant.yml
+
+# Sync
+- name: Sync directories
+  include: sync.yml
+
+# Gsettings
+- name: Fix settings
+  include: gsettings.yml
+
